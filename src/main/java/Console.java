@@ -5,6 +5,10 @@ import java.util.Scanner;
  */
 public class Console {
 
+    String stringInput;
+    int integerInput;
+    double doubleInput;
+
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
     }
@@ -16,21 +20,21 @@ public class Console {
     public static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
-        String userInput = scanner.nextLine();
-        return userInput;
+        String stringInput = scanner.nextLine();
+        return stringInput;
     }
 
     public static Integer getIntegerInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
-        int userInput = scanner.nextInt();
-        return userInput;
+        int integerInput = scanner.nextInt();
+        return integerInput;
     }
 
     public static Double getDoubleInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
-        double userInput = scanner.nextDouble();
-        return userInput;
+        double doubleInput = scanner.nextDouble();
+        return doubleInput;
     }
 }

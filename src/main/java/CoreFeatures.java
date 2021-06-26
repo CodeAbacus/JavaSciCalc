@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 public class CoreFeatures {
     int display;
+    Scanner scanner = new Scanner(System.in);
 
     public CoreFeatures(int standardDisplay) {
     }
@@ -11,6 +14,9 @@ public class CoreFeatures {
     }
     public int resetToZero() {
         display = 0;
+        return display;
+    }
+    public double currentDisplayNumber() {
         return display;
     }
     public double addition(double input) {
