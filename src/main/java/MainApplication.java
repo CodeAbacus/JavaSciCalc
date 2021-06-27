@@ -22,7 +22,9 @@ public class MainApplication {
         // \nCurrent display is: %s", display.resetToZero()
         while (loop) {
             // Console.println("Current display is: %s", display.currentDisplayNumber(result));
-            char operationInput = Console.getCharInput("Enter an operation, 'change' to change display, or type 'info' for more details");
+            char operationInput = Console.getCharInput("+ is plus, - is minus, / is divided by, * is multiplied by," +
+                    " e is end, c is change display, x is clear, \ns is square, r is square root, y is x to the y, i is 1/input," +
+                    " @ is to invert the sign, b is current display\nEnter one of the options:");
 
             switch (operationInput) {
 
@@ -46,13 +48,31 @@ public class MainApplication {
                     calculate.multiplication(input);
                     break;
 
+                case 'b':
+                    calculate.showsDisplayValue();
+                    break;
+
+                case 'x':
+                    calculate.revertToZero();
+                    break;
+
+                case 'c':
+                    input = Console.getDoubleInput("Enter a number");
+                    calculate.changeDisplayToInput(input);
+                    break;
+
+                case 's':
+                    calculate.square();
+                    break;
+
+                case 'r':
+                    calculate.squareRoot();
+                    break;
+
                 case 'e':
                     loop = false;
                     break;
 
-                case 'E':
-                    loop = false;
-                    break;
 
                 default:
                     Console.println("Err");

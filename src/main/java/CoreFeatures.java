@@ -8,10 +8,17 @@ public class CoreFeatures {
         display = 0;
     }
     public double showsDisplayValue() {
+        Console.println("%s", display);
+        return display;
+    }
+    public double changeDisplayToInput(double input) {
+        Console.println("%s", input);
+        display = input;
         return display;
     }
     public double revertToZero() {
         display = 0;
+        Console.println("%s", display);
         return display;
     }
     public double addition(double input) {
@@ -27,14 +34,32 @@ public class CoreFeatures {
         return display;
     }
     public double division(double input) {
-        double quotient = display / input;
-        display = quotient;
+        if (input == 0) {
+            Console.println("Err");
+            display = 0;
+        }
+        else {
+            double quotient = display / input;
+            display = quotient;
+        }
         Console.println("The current display is: %s", display);
         return display;
     }
     public double multiplication(double input) {
         double product = display * input;
         display = product;
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double square() {
+        double square = display * display;
+        display = square;
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double squareRoot() {
+        double squareRoot = display / display;
+        display = squareRoot;
         Console.println("The current display is: %s", display);
         return display;
     }
