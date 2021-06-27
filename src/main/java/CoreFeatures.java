@@ -2,26 +2,28 @@ import java.util.Scanner;
 
 public class CoreFeatures {
     double display;
+    String fraction;
 
     // Constructor for an object "calculator" that has a display value of 0
     public CoreFeatures() {
         display = 0;
     }
+
     // Will print the value of the display to the console
     public double showsDisplayValue() {
-        Console.println("%s", display);
+        Console.println("The current display is: %s", display);
         return display;
     }
     // Will change the value of the display to the number that is input by the user
     public double changeDisplayToInput(double input) {
-        Console.println("%s", input);
+        Console.println("The current display is: %s", input);
         display = input;
         return display;
     }
     // Will change the value of the display back to zero, which is its default position
     public double revertToZero() {
         display = 0;
-        Console.println("%s", display);
+        Console.println("The current display is: %s", display);
         return display;
     }
     // Will add the number input by the user to the number on the display
@@ -79,8 +81,8 @@ public class CoreFeatures {
         return display;
     }
     // Will print the product of the first input to the power of the second input
-    public double exponentiation(double x, double y) {
-        double exponent = Math.pow(x,y);
+    public double exponentiation(double input) {
+        double exponent = Math.pow(display,input);
         display = exponent;
         Console.println("The current display is: %s", display);
         return display;
@@ -98,6 +100,28 @@ public class CoreFeatures {
         display = switchSign;
         Console.println("The current display is: %s", display);
         return display;
+    }
+
+    public String showFraction() {
+        double displayWithDecimals = display;
+        String displayToString = String.format("%s", displayWithDecimals);
+        String[] splitAtDecimal = displayToString.split("\\.");
+        String beforeDecimal = splitAtDecimal[0];
+        String afterDecimal = splitAtDecimal[1];
+        int numberOfPlacesAfterDecimal = splitAtDecimal[1].length();
+        int denominator = (int) Math.pow(10, numberOfPlacesAfterDecimal);
+        if (Integer.parseInt(beforeDecimal) != 0 && Integer.parseInt(afterDecimal) == 0) {
+            fraction = String.format("%s / 1", beforeDecimal);
+        }
+        else if (Integer.parseInt(beforeDecimal) != 0 && Integer.parseInt(afterDecimal) != 0){
+            fraction = String.format("%s and %s/%s", beforeDecimal, afterDecimal, denominator);
+        }
+        else if (Integer.parseInt(beforeDecimal) == 0 && Integer.parseInt(afterDecimal) != 0){
+            fraction = String.format("%s / %s", afterDecimal, denominator);
+        }
+        Console.println("The current display is: %s", display);
+        Console.println("The display shown as a fraction is: " + fraction);
+        return fraction;
     }
 }
 

@@ -1,5 +1,5 @@
-
 import java.util.Scanner;
+
 
 /**
  * Created by leon on 2/9/18.
@@ -22,22 +22,22 @@ public class MainApplication {
             switch (operationInput) {
 
                 case '+':
-                    double input = Console.getDoubleInput("Enter a number");
+                    double input = Console.getDoubleInput("Enter a number:");
                     calculate.addition(input);
                     break;
 
                 case '-':
-                    input = Console.getDoubleInput("Enter a number");
+                    input = Console.getDoubleInput("Enter a number:");
                     calculate.subtraction(input);
                     break;
 
                 case '/':
-                    input = Console.getDoubleInput("Enter a number");
+                    input = Console.getDoubleInput("Enter a number:");
                     calculate.division(input);
                     break;
 
                 case '*':
-                    input = Console.getDoubleInput("Enter a number");
+                    input = Console.getDoubleInput("Enter a number:");
                     calculate.multiplication(input);
                     break;
 
@@ -50,7 +50,7 @@ public class MainApplication {
                     break;
 
                 case 'c':
-                    input = Console.getDoubleInput("Enter a number");
+                    input = Console.getDoubleInput("Enter a number:");
                     calculate.changeDisplayToInput(input);
                     break;
 
@@ -63,9 +63,8 @@ public class MainApplication {
                     break;
 
                 case 'y':
-                    double input1 = Console.getDoubleInput("Enter x:");
-                    double input2 = Console.getDoubleInput("Enter y:");
-                    calculate.exponentiation(input1,input2);
+                    input = Console.getDoubleInput("Enter a number:");
+                    calculate.exponentiation(input);
                     break;
 
                 case 'i':
@@ -74,6 +73,10 @@ public class MainApplication {
 
                 case '@':
                     calculate.switchSign();
+                    break;
+
+                case 'f':
+                    calculate.showFraction();
                     break;
 
                 case 'e':
