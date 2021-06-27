@@ -69,6 +69,20 @@ public class MainApplication {
                     calculate.squareRoot();
                     break;
 
+                case 'y':
+                    double input1 = Console.getDoubleInput("Enter x:");
+                    double input2 = Console.getDoubleInput("Enter y:");
+                    calculate.exponentiation(input1,input2);
+                    break;
+
+                case 'i':
+                    calculate.inverse();
+                    break;
+
+                case '@':
+                    calculate.switchSign();
+                    break;
+
                 case 'e':
                     loop = false;
                     break;

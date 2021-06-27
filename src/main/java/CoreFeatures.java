@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class CoreFeatures {
     double display;
-    double input;
 
     public CoreFeatures() {
         display = 0;
@@ -52,14 +51,38 @@ public class CoreFeatures {
         return display;
     }
     public double square() {
-        double square = display * display;
+        double square = Math.pow(display,display);
         display = square;
         Console.println("The current display is: %s", display);
         return display;
     }
     public double squareRoot() {
-        double squareRoot = display / display;
-        display = squareRoot;
+        if (display < 0) {
+            Console.println("Err");
+            display = 0;
+        }
+        else {
+            double squareRoot = Math.sqrt(display);
+            display = squareRoot;
+        }
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double exponentiation(double x, double y) {
+        double exponent = Math.pow(x,y);
+        display = exponent;
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double inverse() {
+        double inverse = 1 / display;
+        display = inverse;
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double switchSign() {
+        double switchSign = display * -1;
+        display = switchSign;
         Console.println("The current display is: %s", display);
         return display;
     }
