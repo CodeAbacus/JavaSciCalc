@@ -5,15 +5,7 @@ import java.util.Scanner;
  */
 public class Console {
 
-    String stringInput;
-    int integerInput;
-    double doubleInput;
-
     public static void print(String output, Object... args) {
-        System.out.printf(output, args);
-    }
-
-    public static void printf(String output, Object... args) {
         System.out.printf(output, args);
     }
 
@@ -34,13 +26,14 @@ public class Console {
         int integerInput = scanner.nextInt();
         return integerInput;
     }
-
+    // Will assign the next double input to the variable 'doubleInput'
     public static Double getDoubleInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
         double doubleInput = scanner.nextDouble();
         return doubleInput;
     }
+    // Will assign the next character input to the variable 'charInput'
     public static char getCharInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
