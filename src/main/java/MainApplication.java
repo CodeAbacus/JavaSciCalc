@@ -52,6 +52,7 @@ public class MainApplication {
                 case 'c':
                     input = Console.getDoubleInput("Enter a number:");
                     calculate.changeDisplayToInput(input);
+                    Console.println("The current display is: %s", input);
                     break;
 
                 case 's':

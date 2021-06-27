@@ -16,7 +16,6 @@ public class CoreFeatures {
     }
     // Will change the value of the display to the number that is input by the user
     public double changeDisplayToInput(double input) {
-        Console.println("The current display is: %s", input);
         display = input;
         return display;
     }
@@ -62,7 +61,7 @@ public class CoreFeatures {
     }
     // Will print the product of the number on the display squared
     public double square() {
-        double square = Math.pow(display,display);
+        double square = Math.pow(display,2);
         display = square;
         Console.println("The current display is: %s", display);
         return display;
