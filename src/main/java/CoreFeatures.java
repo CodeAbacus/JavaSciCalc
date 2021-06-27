@@ -105,18 +105,23 @@ public class CoreFeatures {
         double displayWithDecimals = display;
         String displayToString = String.format("%s", displayWithDecimals);
         String[] splitAtDecimal = displayToString.split("\\.");
-        String beforeDecimal = splitAtDecimal[0];
-        String afterDecimal = splitAtDecimal[1];
+        int beforeDecimalAsInt = Integer.parseInt(splitAtDecimal[0]);
+        int afterDecimalAsInt = Integer.parseInt(splitAtDecimal[1]);
+        String beforeDecimal = String.format("%s", beforeDecimalAsInt);
+        String afterDecimal = String.format("%s", afterDecimalAsInt);;
         int numberOfPlacesAfterDecimal = splitAtDecimal[1].length();
         int denominator = (int) Math.pow(10, numberOfPlacesAfterDecimal);
         if (Integer.parseInt(beforeDecimal) != 0 && Integer.parseInt(afterDecimal) == 0) {
-            fraction = String.format("%s / 1", beforeDecimal);
+            fraction = String.format("%s/1", beforeDecimal);
         }
         else if (Integer.parseInt(beforeDecimal) != 0 && Integer.parseInt(afterDecimal) != 0){
             fraction = String.format("%s and %s/%s", beforeDecimal, afterDecimal, denominator);
         }
         else if (Integer.parseInt(beforeDecimal) == 0 && Integer.parseInt(afterDecimal) != 0){
-            fraction = String.format("%s / %s", afterDecimal, denominator);
+            fraction = String.format("%s/%s", afterDecimal, denominator);
+        }
+        else {
+            fraction = "0";
         }
         Console.println("The current display is: %s", display);
         Console.println("The display shown as a fraction is: " + fraction);

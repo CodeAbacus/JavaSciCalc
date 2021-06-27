@@ -11,84 +11,65 @@ public class MainApplication {
         CoreFeatures calculate = new CoreFeatures();
         boolean loop = true;
         Console.println("Welcome to my calculator!");
-        Console.println("Current display is: %s", calculate.showsDisplayValue());
+        Console.println("Current display is: %s", 0);
 
         while (loop) {
+            String operationInput = Console.getStringInput("Choose one: add, subtract, divide, multiply, display, clear,\n" +
+                    "change display, square, square root, exponent, inverse, switch sign, fraction, end");
 
-            char operationInput = Console.getCharInput("+ is plus, - is minus, / is divided by, * is multiplied by," +
-                    " e is end, c is change display, x is clear, \ns is square, r is square root, y is x to the y, i is 1/input," +
-                    " @ is to invert the sign, b is current display\nEnter one of the options:");
-
-            switch (operationInput) {
-
-                case '+':
-                    double input = Console.getDoubleInput("Enter a number:");
-                    calculate.addition(input);
-                    break;
-
-                case '-':
-                    input = Console.getDoubleInput("Enter a number:");
-                    calculate.subtraction(input);
-                    break;
-
-                case '/':
-                    input = Console.getDoubleInput("Enter a number:");
-                    calculate.division(input);
-                    break;
-
-                case '*':
-                    input = Console.getDoubleInput("Enter a number:");
-                    calculate.multiplication(input);
-                    break;
-
-                case 'b':
-                    calculate.showsDisplayValue();
-                    break;
-
-                case 'x':
-                    calculate.revertToZero();
-                    break;
-
-                case 'c':
-                    input = Console.getDoubleInput("Enter a number:");
-                    calculate.changeDisplayToInput(input);
-                    Console.println("The current display is: %s", input);
-                    break;
-
-                case 's':
-                    calculate.square();
-                    break;
-
-                case 'r':
-                    calculate.squareRoot();
-                    break;
-
-                case 'y':
-                    input = Console.getDoubleInput("Enter a number:");
-                    calculate.exponentiation(input);
-                    break;
-
-                case 'i':
-                    calculate.inverse();
-                    break;
-
-                case '@':
-                    calculate.switchSign();
-                    break;
-
-                case 'f':
-                    calculate.showFraction();
-                    break;
-
-                case 'e':
-                    loop = false;
-                    break;
-
-                default:
-                    Console.println("Err");
-                    calculate.revertToZero();
-                    Console.println("The current display is: %s", calculate.showsDisplayValue());
-                    break;
+            if ("add".equals(operationInput)) {
+                double input = Console.getDoubleInput("Enter a number:");
+                calculate.addition(input);
+            }
+            else if ("subtract".equals(operationInput)) {
+                double input = Console.getDoubleInput("Enter a number:");
+                calculate.subtraction(input);
+            }
+            else if ("divide".equals(operationInput)) {
+                double input = Console.getDoubleInput("Enter a number:");
+                calculate.division(input);
+            }
+            else if ("multiply".equals(operationInput)) {
+                double input = Console.getDoubleInput("Enter a number:");
+                calculate.multiplication(input);
+            }
+            else if ("display".equals(operationInput)) {
+                calculate.showsDisplayValue();
+            }
+            else if ("clear".equals(operationInput)) {
+                calculate.revertToZero();
+            }
+            else if ("change display".equals(operationInput)) {
+                double input = Console.getDoubleInput("Enter a number:");
+                calculate.changeDisplayToInput(input);
+                Console.println("The current display is: %s", input);
+            }
+            else if ("square".equals(operationInput)) {
+                calculate.square();
+            }
+            else if ("square root".equals(operationInput)) {
+                calculate.squareRoot();
+            }
+            else if ("exponent".equals(operationInput)) {
+                double input = Console.getDoubleInput("Enter a number:");
+                calculate.exponentiation(input);
+            }
+            else if ("inverse".equals(operationInput)) {
+                calculate.inverse();
+            }
+            else if ("switch sign".equals(operationInput)) {
+                calculate.switchSign();
+            }
+            else if ("fraction".equals(operationInput)) {
+                calculate.showFraction();
+            }
+            else if ("end".equals(operationInput)) {
+                loop = false;
+            }
+            else {
+                Console.println("Err");
+                calculate.revertToZero();
+                Console.println("The current display is: %s", calculate.showsDisplayValue());
             }
         }
     }
