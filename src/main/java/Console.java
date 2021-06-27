@@ -13,6 +13,10 @@ public class Console {
         System.out.printf(output, args);
     }
 
+    public static void printf(String output, Object... args) {
+        System.out.printf(output, args);
+    }
+
     public static void println(String output, Object... args) {
         print(output + "\n", args);
     }
@@ -36,5 +40,11 @@ public class Console {
         println(prompt);
         double doubleInput = scanner.nextDouble();
         return doubleInput;
+    }
+    public static char getCharInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        char charInput = scanner.next().charAt(0);
+        return charInput;
     }
 }

@@ -1,35 +1,44 @@
 import java.util.Scanner;
 
 public class CoreFeatures {
-    int display;
-    Scanner scanner = new Scanner(System.in);
+    double display;
+    double input;
 
-    public CoreFeatures(int standardDisplay) {
+    public CoreFeatures() {
+        display = 0;
     }
-    public CoreFeatures(double integerIsInput) {
-        Console.getIntegerInput("Enter a int.");
+    public double showsDisplayValue() {
+        return display;
     }
-    public CoreFeatures(String stringIsInput) {
-        Console.getStringInput("Enter a string.");
-    }
-    public int resetToZero() {
+    public double revertToZero() {
         display = 0;
         return display;
     }
-    public double currentDisplayNumber() {
+    public double addition(double input) {
+        double sum = display + input;
+        display = sum;
+        Console.println("The current display is: %s", display);
         return display;
     }
-    public double addition(double input) {
-        return display + input;
-    }
     public double subtraction(double input) {
-        return display - input;
+        double difference = display - input;
+        display = difference;
+        Console.println("The current display is: %s", display);
+        return display;
     }
     public double division(double input) {
-        return display / input;
+        double quotient = display / input;
+        display = quotient;
+        Console.println("The current display is: %s", display);
+        return display;
     }
     public double multiplication(double input) {
-        return display / input;
+        double product = display * input;
+        display = product;
+        Console.println("The current display is: %s", display);
+        return display;
     }
 }
+
+
 
