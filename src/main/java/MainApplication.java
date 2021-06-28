@@ -78,11 +78,6 @@ public class MainApplication {
             else if ("cube".equals(operationInput)) {
                 calculate.cubed();
             }
-            else {
-                Console.println("Err");
-                calculate.revertToZero();
-                Console.println("The current display is: %s", calculate.showsDisplayValue());
-            }
         }
     }
 }

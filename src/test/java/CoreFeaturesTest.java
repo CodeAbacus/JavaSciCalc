@@ -75,6 +75,18 @@ public class CoreFeaturesTest extends TestCase {
         // Then
         assertEquals(expectedValue,actualValue);
     }
+    public void testDivision1() {
+        // Given
+        CoreFeatures display = new CoreFeatures();
+        double currentDisplay = 20;
+        double userInput = 0;
+        double expectedValue = 0;
+        // When
+        display.changeDisplayToInput(currentDisplay);
+        double actualValue = display.division(userInput);
+        // Then
+        assertEquals(expectedValue,actualValue);
+    }
 
     public void testMultiplication() {
         // Given
@@ -106,6 +118,17 @@ public class CoreFeaturesTest extends TestCase {
         CoreFeatures display = new CoreFeatures();
         double currentDisplay = 16;
         double expectedValue = 4;
+        // When
+        display.changeDisplayToInput(currentDisplay);
+        double actualValue = display.squareRoot();
+        // Then
+        assertEquals(expectedValue,actualValue);
+    }
+    public void testSquareRoot1() {
+        // Given
+        CoreFeatures display = new CoreFeatures();
+        double currentDisplay = -6;
+        double expectedValue = 0;
         // When
         display.changeDisplayToInput(currentDisplay);
         double actualValue = display.squareRoot();
@@ -191,6 +214,65 @@ public class CoreFeaturesTest extends TestCase {
         // When
         display.changeDisplayToInput(currentDisplay);
         String actualValue = display.showFraction();
+        // Then
+        assertEquals(expectedValue,actualValue);
+    }
+    public void testCubed() {
+        // Given
+        CoreFeatures display = new CoreFeatures();
+        double currentDisplay = 7;
+        double expectedValue = 343;
+        // When
+        display.changeDisplayToInput(currentDisplay);
+        double actualValue = display.cubed();
+        // Then
+        assertEquals(expectedValue,actualValue);
+    }
+    public void testSwitchDisplayMode() {
+        // Given
+        CoreFeatures display = new CoreFeatures();
+        String modeInputByUser = "binary";
+        double currentDisplay = 20;
+        String expectedValue = "10100";
+        // When
+        display.changeDisplayToInput(currentDisplay);
+        String actualValue = display.switchDisplayMode(modeInputByUser);
+        // Then
+        assertEquals(expectedValue,actualValue);
+    }
+    public void testSwitchDisplayMode1() {
+        // Given
+        CoreFeatures display = new CoreFeatures();
+        String modeInputByUser = "octal";
+        double currentDisplay = 20;
+        String expectedValue = "24";
+        // When
+        display.changeDisplayToInput(currentDisplay);
+        String actualValue = display.switchDisplayMode(modeInputByUser);
+        // Then
+        assertEquals(expectedValue,actualValue);
+    }
+    public void testSwitchDisplayMode2() {
+        // Given
+        CoreFeatures display = new CoreFeatures();
+        String modeInputByUser = "hex";
+        double currentDisplay = 20;
+        String expectedValue = "14";
+        // When
+        display.changeDisplayToInput(currentDisplay);
+        String actualValue = display.switchDisplayMode(modeInputByUser);
+        // Then
+        assertEquals(expectedValue,actualValue);
+    }
+    public void testSwitchDisplayMode3() {
+        // Given
+        CoreFeatures display = new CoreFeatures();
+        String modeInputByUser = "anything other than 'hex' 'octal' 'binary'";
+        double currentDisplay = 20;
+        String expectedValue = "20.0";
+        // When
+        display.changeDisplayToInput(currentDisplay);
+        String actualValue = display.switchDisplayMode(modeInputByUser);
         // Then
         assertEquals(expectedValue,actualValue);
     }

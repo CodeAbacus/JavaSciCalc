@@ -13,21 +13,21 @@ public class CoreFeatures {
         if ("binary".equals(mode)) {
             int currentDisplay = (int) display;
             String binaryString = Integer.toBinaryString(currentDisplay);
-            Console.println("The current display is binary number: %s", binaryString);
+            Console.println("The current display is the binary number: %s", binaryString);
             String string = binaryString;
             return string;
         }
         else if ("hex".equals(mode)) {
             int currentDisplay = (int) display;
             String hexString = Integer.toHexString(currentDisplay);
-            Console.println("The current display is a hexadecimal number: %s", hexString);
+            Console.println("The current display is the hexadecimal number: %s", hexString);
             String string = hexString;
             return string;
         }
         else if ("octal".equals(mode)) {
             int currentDisplay = (int) display;
             String octalString = Integer.toOctalString(currentDisplay);
-            Console.println("The current display is a octal number: %s", octalString);
+            Console.println("The current display is the octal number: %s", octalString);
             String string = octalString;
             return string;
         }
@@ -43,17 +43,17 @@ public class CoreFeatures {
      public String switchDisplayModeByRotating() {
         int currentDisplay = (int) display;
         String binaryString = Integer.toBinaryString(currentDisplay);
-        Console.println("The current display is a binary number: %s", binaryString);
+        Console.println("The current display is the binary number: %s", binaryString);
         String userInput = Console.getStringInput("Would you like to switch to the next mode? Y or N");
         if ("y".equals(userInput)) {
             currentDisplay = (int) display;
             String octalString = Integer.toOctalString(currentDisplay);
-            Console.println("The current display is a octal number: %s", octalString);
+            Console.println("The current display is the octal number: %s", octalString);
             String userInput1 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
             if ("y".equals(userInput1)) {
                 currentDisplay = (int) display;
                 String hexString = Integer.toHexString(currentDisplay);
-                Console.println("The current display is a hexadecimal number: %s", hexString);
+                Console.println("The current display is the hexadecimal number: %s", hexString);
                 String userInput2 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
                 if ("y".equals(userInput2)) {
                     String string = String.format("%s", display);
