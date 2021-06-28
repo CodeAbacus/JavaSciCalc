@@ -12,6 +12,8 @@ public class MainApplication {
         boolean loop = true;
         Console.println("Welcome to my calculator!");
         Console.println("Current display is: %s", 0);
+        double startingValue = Console.getDoubleInput("Enter a starting number:");
+        calculate.changeDisplayToInput(startingValue);
 
         while (loop) {
             String operationInput = Console.getStringInput("Choose one: add, subtract, divide, multiply, display, clear,\n" +
@@ -65,6 +67,16 @@ public class MainApplication {
             }
             else if ("end".equals(operationInput)) {
                 loop = false;
+            }
+            else if ("binary".equals(operationInput) || "hex".equals(operationInput) || "octal".equals(operationInput)) {
+                calculate.switchDisplayMode(operationInput);
+
+            }
+            else if ("rotate".equals(operationInput)) {
+                calculate.switchDisplayModeByRotating();
+            }
+            else if ("cube".equals(operationInput)) {
+                calculate.cubed();
             }
             else {
                 Console.println("Err");

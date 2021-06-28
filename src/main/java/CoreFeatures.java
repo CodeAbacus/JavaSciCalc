@@ -1,12 +1,67 @@
 import java.util.Scanner;
 
 public class CoreFeatures {
-    double display;
+    double display = 0;
     String fraction;
+
 
     // Constructor for an object "calculator" that has a display value of 0
     public CoreFeatures() {
-        display = 0;
+    }
+    // Will show the number on the display as a 'binary' 'hexadecimal' 'octal' or 'decimal' based on user input
+    public String switchDisplayMode(String mode) {
+        if ("binary".equals(mode)) {
+            int currentDisplay = (int) display;
+            String binaryString = Integer.toBinaryString(currentDisplay);
+            Console.println("The current display is binary number: %s", binaryString);
+            String string = binaryString;
+            return string;
+        }
+        else if ("hex".equals(mode)) {
+            int currentDisplay = (int) display;
+            String hexString = Integer.toHexString(currentDisplay);
+            Console.println("The current display is a hexadecimal number: %s", hexString);
+            String string = hexString;
+            return string;
+        }
+        else if ("octal".equals(mode)) {
+            int currentDisplay = (int) display;
+            String octalString = Integer.toOctalString(currentDisplay);
+            Console.println("The current display is a octal number: %s", octalString);
+            String string = octalString;
+            return string;
+        }
+        else {
+            String string = String.format("%s", display);
+            return string;
+        }
+    }
+
+
+
+    // Will switch the display mode to 'binary' 'hexadecimal' 'octal' or 'decimal' on a rotation
+     public String switchDisplayModeByRotating() {
+        int currentDisplay = (int) display;
+        String binaryString = Integer.toBinaryString(currentDisplay);
+        Console.println("The current display is a binary number: %s", binaryString);
+        String userInput = Console.getStringInput("Would you like to switch to the next mode? Y or N");
+        if ("y".equals(userInput)) {
+            currentDisplay = (int) display;
+            String octalString = Integer.toOctalString(currentDisplay);
+            Console.println("The current display is a octal number: %s", octalString);
+            String userInput1 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
+            if ("y".equals(userInput1)) {
+                currentDisplay = (int) display;
+                String hexString = Integer.toHexString(currentDisplay);
+                Console.println("The current display is a hexadecimal number: %s", hexString);
+                String userInput2 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
+                if ("y".equals(userInput2)) {
+                    String string = String.format("%s", display);
+                    Console.println("The current display is: %s", string);
+                }
+            }
+        }
+        return null;
     }
 
     // Will print the value of the display to the console
@@ -100,7 +155,7 @@ public class CoreFeatures {
         Console.println("The current display is: %s", display);
         return display;
     }
-
+    // Will show the number on the display as a fraction
     public String showFraction() {
         double displayWithDecimals = display;
         String displayToString = String.format("%s", displayWithDecimals);
@@ -126,6 +181,13 @@ public class CoreFeatures {
         Console.println("The current display is: %s", display);
         Console.println("The display shown as a fraction is: " + fraction);
         return fraction;
+    }
+    // Will raise the number on the display to the 3rd power
+    public double cubed() {
+        double cube = Math.pow(display,3);
+        display = cube;
+        Console.println("The current display is: %s", display);
+        return display;
     }
 }
 
