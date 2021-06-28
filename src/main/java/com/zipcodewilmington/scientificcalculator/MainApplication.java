@@ -1,7 +1,4 @@
 package com.zipcodewilmington.scientificcalculator;
-import java.util.Scanner;
-import com.zipcodewilmington.scientificcalculator.Console;
-import com.zipcodewilmington.scientificcalculator.CoreFeatures;
 
 
 /**
@@ -11,7 +8,7 @@ import com.zipcodewilmington.scientificcalculator.CoreFeatures;
 public class MainApplication {
 
     public static void main(String[] args) {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         boolean loop = true;
         Console.println("Welcome to Our Calculator!");
         Console.println("Current display is: %s", 0);

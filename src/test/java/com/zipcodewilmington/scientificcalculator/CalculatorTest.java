@@ -1,14 +1,13 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import com.zipcodewilmington.scientificcalculator.CoreFeatures;
 import junit.framework.TestCase;
 
-public class CoreFeaturesTest extends TestCase {
+public class CalculatorTest extends TestCase {
 
 
     public void testShowsDisplayValue() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 5;
         double expectedDisplay = 5;
         // When
@@ -19,7 +18,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testChangeDisplayToInput() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 4;
         double displayToBeChangedTo = 10;
         double expectedDisplay = 10;
@@ -31,7 +30,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testRevertToZero() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 7;
         double expectedDisplay = 0;
         // When
@@ -42,7 +41,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testAddition() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 2;
         double userInput = 2;
         double expectedValue = 4;
@@ -55,7 +54,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testSubtraction() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 4;
         double userInput = 2;
         double expectedValue = 2;
@@ -68,7 +67,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testDivision() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 20;
         double userInput = 2;
         double expectedValue = 10;
@@ -80,7 +79,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testDivision1() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 20;
         double userInput = 0;
         double expectedValue = 0;
@@ -93,7 +92,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testMultiplication() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 10;
         double userInput = 2;
         double expectedValue = 20;
@@ -106,7 +105,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testSquare() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 10;
         double expectedValue = 100;
         // When
@@ -118,7 +117,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testSquareRoot() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 16;
         double expectedValue = 4;
         // When
@@ -129,7 +128,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testSquareRoot1() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = -6;
         double expectedValue = 0;
         // When
@@ -141,7 +140,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testExponentiation() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 5;
         double userInput = 3;
         double expectedValue = 125;
@@ -154,7 +153,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testInverse() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 5;
         double expectedValue = .2;
         // When
@@ -166,7 +165,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testSwitchSign() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 5;
         double expectedValue = -5;
         // When
@@ -178,7 +177,7 @@ public class CoreFeaturesTest extends TestCase {
 
     public void testShowFraction1() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = .005;
         String expectedValue = "5/1000";
         // When
@@ -189,7 +188,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testShowFraction2() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 7;
         String expectedValue = "7/1";
         // When
@@ -200,7 +199,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testShowFraction3() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 8.33;
         String expectedValue = "8 and 33/100";
         // When
@@ -211,7 +210,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testShowFraction4() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 0;
         String expectedValue = "0";
         // When
@@ -222,7 +221,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testCubed() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         double currentDisplay = 7;
         double expectedValue = 343;
         // When
@@ -233,7 +232,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testSwitchDisplayMode() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         String modeInputByUser = "binary";
         double currentDisplay = 20;
         String expectedValue = "10100";
@@ -245,7 +244,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testSwitchDisplayMode1() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         String modeInputByUser = "octal";
         double currentDisplay = 20;
         String expectedValue = "24";
@@ -257,7 +256,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testSwitchDisplayMode2() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         String modeInputByUser = "hex";
         double currentDisplay = 20;
         String expectedValue = "14";
@@ -269,7 +268,7 @@ public class CoreFeaturesTest extends TestCase {
     }
     public void testSwitchDisplayMode3() {
         // Given
-        CoreFeatures display = new CoreFeatures();
+        Calculator display = new Calculator();
         String modeInputByUser = "anything other than 'hex' 'octal' 'binary'";
         double currentDisplay = 20;
         String expectedValue = "20.0";

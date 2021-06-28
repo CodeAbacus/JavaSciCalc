@@ -22,7 +22,7 @@ public class LogarithmicFunctionTest {
         @Test
         public void logTest() {
 
-            CoreFeatures calculate = new CoreFeatures();
+            Calculator calculate = new Calculator();
             double expected = 15.761420707019587;
             double actual;
 
@@ -36,7 +36,7 @@ public class LogarithmicFunctionTest {
 
         @Test
         public void naturalLogarithmTest(){
-            CoreFeatures calculate = new CoreFeatures();
+            Calculator calculate = new Calculator();
             double expected = 5.3979400086720375;
             double actual;
 

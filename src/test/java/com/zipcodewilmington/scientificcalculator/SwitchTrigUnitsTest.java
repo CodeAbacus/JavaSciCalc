@@ -8,7 +8,7 @@ public class SwitchTrigUnitsTest {
 
     @Test
     public void sinTest() {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         calculate.changeDisplayToInput(50);
         calculate.sin();
         double actual = calculate.switchUnitsMode("degrees");
@@ -19,7 +19,7 @@ public class SwitchTrigUnitsTest {
     }
     @Test
     public void cosineTest(){
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         calculate.changeDisplayToInput(45);
         calculate.cosine();
         double actual = calculate.switchUnitsMode("degrees");
@@ -31,7 +31,7 @@ public class SwitchTrigUnitsTest {
     }
     @Test
     public void tangentTest(){
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         calculate.changeDisplayToInput(85);
         calculate.tangent();
         double actual = calculate.switchUnitsMode("degrees");
