@@ -9,7 +9,7 @@ public class FactorialFunctionTest {
     @Test
     public void factorialTest() {
 
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
 
         int expected = 479001600;
         calculate.changeDisplayToInput(12);

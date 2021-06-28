@@ -2,13 +2,13 @@ package com.zipcodewilmington.scientificcalculator;
 
 import com.zipcodewilmington.scientificcalculator.Console;
 
-public class CoreFeatures {
+public class Calculator {
     double display = 0;
     double val = 0;
     String fraction;
 
     // Constructor for an object "calculator" that has a display value of 0
-    public CoreFeatures() {
+    public Calculator() {
     }
     // Will show the number on the display as a 'binary' 'hexadecimal' 'octal' or 'decimal' based on user input
     public String switchDisplayMode(String mode) {

@@ -9,7 +9,7 @@ public class TrigFunctionsTest {
 
     @Test
     public void testSin() {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         double expected = -0.13235175009777303;
         double actual;
 
@@ -23,7 +23,7 @@ public class TrigFunctionsTest {
     }
     @Test
     public void Cosine() {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         double expected = -0.9880316240928618;
         double actual;
 
@@ -37,7 +37,7 @@ public class TrigFunctionsTest {
     }
     @Test
     public void Tangent() {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         double expected = 0.6502878401571168;
         double actual;
 
@@ -51,7 +51,7 @@ public class TrigFunctionsTest {
     }
     @Test
     public void InverseSine() {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         double expected = 1.570796326794897;
         double actual;
 
@@ -65,7 +65,7 @@ public class TrigFunctionsTest {
     }
     @Test
     public void InverseCosine() {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         double expected = 1.047197551196598;
         double actual;
 
@@ -79,7 +79,7 @@ public class TrigFunctionsTest {
     }
     @Test
     public void InverseTangent() {
-        CoreFeatures calculate = new CoreFeatures();
+        Calculator calculate = new Calculator();
         double expected = -0.7148764296291646;
         double actual;
 

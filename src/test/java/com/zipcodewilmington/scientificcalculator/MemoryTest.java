@@ -7,7 +7,7 @@ public class MemoryTest{
 
     @Test
     public void addMemoryTest() {
-        CoreFeatures m = new CoreFeatures();
+        Calculator m = new Calculator();
         double currentDisplay = 25;
         double displayAlreadyAdded = 25;
         double expected = 50;
@@ -22,7 +22,7 @@ public class MemoryTest{
 
     @Test
     public void resetTest(){
-        CoreFeatures m = new CoreFeatures();
+        Calculator m = new Calculator();
         double currentDisplay = 12;
         double expected = 0;
         m.changeDisplayToInput(currentDisplay);
@@ -32,7 +32,7 @@ public class MemoryTest{
 
     @Test
     public void recallTest(){
-        CoreFeatures m = new CoreFeatures();
+        Calculator m = new Calculator();
         double displayAlreadyAdded = 25;
         double expected = 25;
         m.changeDisplayToInput(displayAlreadyAdded);
