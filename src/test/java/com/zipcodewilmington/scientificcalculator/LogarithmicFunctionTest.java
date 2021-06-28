@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-class LogarithmicFunctionTest {
+public class LogarithmicFunctionTest {
 
 
 
@@ -18,14 +18,16 @@ class LogarithmicFunctionTest {
         public void tearDown() throws Exception {
         }
 
-        LogarithmicFunction l = new LogarithmicFunction();
+
         @Test
         public void logTest() {
 
+            CoreFeatures calculate = new CoreFeatures();
             double expected = 15.761420707019587;
             double actual;
 
-            actual= l.Log(7000000);
+            calculate.changeDisplayToInput(7000000);
+            actual= calculate.log();
 
             System.out.println(actual);
             assertEquals(expected,actual,14);
@@ -33,11 +35,13 @@ class LogarithmicFunctionTest {
         }
 
         @Test
-        public void InverseLogarithmTest(){
+        public void naturalLogarithmTest(){
+            CoreFeatures calculate = new CoreFeatures();
             double expected = 5.3979400086720375;
             double actual;
 
-            actual= l.InverseLogarithm(250000);
+            calculate.changeDisplayToInput(250000);
+            actual= calculate.naturalLog();
 
             System.out.println(actual);
 

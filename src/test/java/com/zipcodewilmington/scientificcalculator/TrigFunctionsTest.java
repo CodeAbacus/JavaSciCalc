@@ -5,15 +5,16 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-class TrigFunctionsTest {
+public class TrigFunctionsTest {
 
-    TrigFunctions t = new TrigFunctions();
     @Test
-    public void sin() {
+    public void testSin() {
+        CoreFeatures calculate = new CoreFeatures();
         double expected = -0.13235175009777303;
         double actual;
 
-        actual= t.sin(25);
+        calculate.changeDisplayToInput(25);
+        actual= calculate.sin();
 
         System.out.println(actual);
 
@@ -22,10 +23,12 @@ class TrigFunctionsTest {
     }
     @Test
     public void Cosine() {
+        CoreFeatures calculate = new CoreFeatures();
         double expected = -0.9880316240928618;
         double actual;
 
-        actual= t.sin(30);
+        calculate.changeDisplayToInput(30);
+        actual= calculate.cosine();
 
         System.out.println(actual);
 
@@ -34,10 +37,12 @@ class TrigFunctionsTest {
     }
     @Test
     public void Tangent() {
+        CoreFeatures calculate = new CoreFeatures();
         double expected = 0.6502878401571168;
         double actual;
 
-        actual= t.sin(15);
+        calculate.changeDisplayToInput(15);
+        actual= calculate.tangent();
 
         System.out.println(actual);
 
@@ -46,10 +51,12 @@ class TrigFunctionsTest {
     }
     @Test
     public void InverseSine() {
-        double expected = -0.3048106211022167;
+        CoreFeatures calculate = new CoreFeatures();
+        double expected = 1.570796326794897;
         double actual;
 
-        actual= t.sin(60);
+        calculate.changeDisplayToInput(1);
+        actual= calculate.inverseSine();
 
         System.out.println(actual);
 
@@ -58,10 +65,12 @@ class TrigFunctionsTest {
     }
     @Test
     public void InverseCosine() {
-        double expected = 0.8939966636005579;
+        CoreFeatures calculate = new CoreFeatures();
+        double expected = 1.047197551196598;
         double actual;
 
-        actual= t.sin(90);
+        calculate.changeDisplayToInput(0.5);
+        actual= calculate.inverseCosine();
 
         System.out.println(actual);
 
@@ -70,10 +79,12 @@ class TrigFunctionsTest {
     }
     @Test
     public void InverseTangent() {
+        CoreFeatures calculate = new CoreFeatures();
         double expected = -0.7148764296291646;
         double actual;
 
-        actual= t.sin(150);
+        calculate.changeDisplayToInput(150);
+        actual= calculate.inverseTangent();
 
         System.out.println(actual);
 
