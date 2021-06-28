@@ -253,8 +253,10 @@ public class Calculator {
 
         }
         else if ("degrees".equals(mode)) {
-            display = Math.toDegrees(display);
-            Console.println("The current display is: %s", display);
+            double toDegrees = Math.toDegrees(display);
+            display = toDegrees;
+            Console.println("The current display in degrees is: %s", display);
+            return display;
 
         }
         return display;

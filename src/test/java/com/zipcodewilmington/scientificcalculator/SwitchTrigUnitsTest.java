@@ -9,10 +9,10 @@ public class SwitchTrigUnitsTest {
     @Test
     public void sinTest() {
         Calculator calculate = new Calculator();
-        calculate.changeDisplayToInput(50);
-        calculate.sin();
-        double actual = calculate.switchUnitsMode("degrees");
-        double expected = 0.766044443118978;
+        double radianToDegrees = Math.toDegrees(20);
+        calculate.changeDisplayToInput(radianToDegrees);
+        double actual = calculate.sin();
+        double expected = 0.342020143325669;
 
         System.out.println(actual);
         assertEquals(expected, actual,14);
@@ -20,9 +20,9 @@ public class SwitchTrigUnitsTest {
     @Test
     public void cosineTest(){
         Calculator calculate = new Calculator();
-        calculate.changeDisplayToInput(45);
-        calculate.cosine();
-        double actual = calculate.switchUnitsMode("degrees");
+        double radiansToDegrees = Math.toDegrees(45);
+        calculate.changeDisplayToInput(radiansToDegrees);
+        double actual = calculate.cosine();
         double expected = 0.70710678118;
 
         System.out.println(actual);
@@ -32,10 +32,10 @@ public class SwitchTrigUnitsTest {
     @Test
     public void tangentTest(){
         Calculator calculate = new Calculator();
-        calculate.changeDisplayToInput(85);
-        calculate.tangent();
-        double actual = calculate.switchUnitsMode("degrees");
-        double expected = 11.43005230276;
+        double radiansToDegrees = Math.toDegrees(45);
+        calculate.changeDisplayToInput(radiansToDegrees);
+        double actual = calculate.tangent();;
+        double expected = 1;
 
         System.out.println(actual);
         assertEquals(expected, actual,14);
