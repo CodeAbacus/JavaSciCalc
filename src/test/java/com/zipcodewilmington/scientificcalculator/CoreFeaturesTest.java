@@ -1,3 +1,6 @@
+package com.zipcodewilmington.scientificcalculator;
+
+import com.zipcodewilmington.scientificcalculator.CoreFeatures;
 import junit.framework.TestCase;
 
 public class CoreFeaturesTest extends TestCase {

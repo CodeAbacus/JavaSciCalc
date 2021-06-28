@@ -5,35 +5,39 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 public class MemoryTest{
 
-    Memory m = new Memory();
     @Test
-    public void AddMemoryTest() {
-
-        double actual = 25;
-
-        m.AddMemory(25);
-        double expected = m.val;
-        assertEquals(actual,expected,0);
+    public void addMemoryTest() {
+        CoreFeatures m = new CoreFeatures();
+        double currentDisplay = 25;
+        double displayAlreadyAdded = 25;
+        double expected = 50;
+        m.changeDisplayToInput(displayAlreadyAdded);
+        m.addMemory();
+        m.changeDisplayToInput(currentDisplay);
+        double actual = m.addMemory();
+        assertEquals(expected,actual,0);
 
 
     }
 
     @Test
     public void resetTest(){
-
-        double actual = 0;
-        m.ResetMemory();
-        double expected = m.val;
-        assertEquals(actual,expected,0);
+        CoreFeatures m = new CoreFeatures();
+        double currentDisplay = 12;
+        double expected = 0;
+        m.changeDisplayToInput(currentDisplay);
+        double actual = m.resetMemory();
+        assertEquals(expected,actual,0);
     }
 
     @Test
     public void recallTest(){
-
-        double actual = 0;
-        m.RecallMemory();
-        double expected = m.val;
-        assertEquals(actual,expected,0);
+        CoreFeatures m = new CoreFeatures();
+        double displayAlreadyAdded = 25;
+        double expected = 25;
+        m.changeDisplayToInput(displayAlreadyAdded);
+        double actual = m.addMemory();
+        assertEquals(expected,actual,0);
 
     }
 

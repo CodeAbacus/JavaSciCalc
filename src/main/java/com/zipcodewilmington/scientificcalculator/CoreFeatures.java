@@ -1,9 +1,11 @@
-import java.util.Scanner;
+package com.zipcodewilmington.scientificcalculator;
+
+import com.zipcodewilmington.scientificcalculator.Console;
 
 public class CoreFeatures {
     double display = 0;
+    double val = 0;
     String fraction;
-
 
     // Constructor for an object "calculator" that has a display value of 0
     public CoreFeatures() {
@@ -41,27 +43,27 @@ public class CoreFeatures {
 
     // Will switch the display mode to 'binary' 'hexadecimal' 'octal' or 'decimal' on a rotation
      public String switchDisplayModeByRotating() {
-        int currentDisplay = (int) display;
-        String binaryString = Integer.toBinaryString(currentDisplay);
-        Console.println("The current display is the binary number: %s", binaryString);
-        String userInput = Console.getStringInput("Would you like to switch to the next mode? Y or N");
-        if ("y".equals(userInput)) {
-            currentDisplay = (int) display;
-            String octalString = Integer.toOctalString(currentDisplay);
-            Console.println("The current display is the octal number: %s", octalString);
-            String userInput1 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
-            if ("y".equals(userInput1)) {
+            int currentDisplay = (int) display;
+            String binaryString = Integer.toBinaryString(currentDisplay);
+            Console.println("The current display is the binary number: %s", binaryString);
+            String userInput = Console.getStringInput("Would you like to switch to the next mode? Y or N");
+            if ("y".equals(userInput)) {
                 currentDisplay = (int) display;
-                String hexString = Integer.toHexString(currentDisplay);
-                Console.println("The current display is the hexadecimal number: %s", hexString);
-                String userInput2 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
-                if ("y".equals(userInput2)) {
-                    String string = String.format("%s", display);
-                    Console.println("The current display is: %s", string);
+                String octalString = Integer.toOctalString(currentDisplay);
+                Console.println("The current display is the octal number: %s", octalString);
+                String userInput1 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
+                if ("y".equals(userInput1)) {
+                    currentDisplay = (int) display;
+                    String hexString = Integer.toHexString(currentDisplay);
+                    Console.println("The current display is the hexadecimal number: %s", hexString);
+                    String userInput2 = Console.getStringInput("Would you like to switch to the next mode? Y or N");
+                    if ("y".equals(userInput2)) {
+                        String string = String.format("%s", display);
+                        Console.println("The current display is: %s", string);
+                    }
                 }
             }
-        }
-        return null;
+            return null;
     }
 
     // Will print the value of the display to the console
@@ -186,6 +188,105 @@ public class CoreFeatures {
     public double cubed() {
         double cube = Math.pow(display,3);
         display = cube;
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+
+    public double factorial(){
+        double fact = 1;
+        for(int i=1; i<=display; i++){
+            fact=fact*i;
+        }
+        display = fact;
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+
+    public double addMemory(){
+        val += display;
+        Console.println("The current display is: %s", display);
+        return val;
+    }
+    public double resetMemory(){
+        val = 0;
+        Console.println("The current display is: %s", display);
+        return val;
+    }
+    public double recallMemory(){
+        Console.println("The current display is: %s", val);
+        return val;
+    }
+    public double sin() {
+        display = Math.sin(display);
+        Console.println("The current display in radians is: %s", display);
+        return display;
+    }
+    public double cosine() {
+        display = Math.cos(display);
+        Console.println("The current display in radians is: %s", display);
+        return display;
+    }
+    public double tangent(){
+        display = Math.tan(display);
+        Console.println("The current display in radians is: %s", display);
+        return display;
+    }
+    public double inverseSine() {
+        display = Math.asin(display);
+        Console.println("The current display in radians is: %s", display);
+        return display;
+    }
+    public double inverseCosine() {
+        display = Math.acos(display);
+        Console.println("The current display in radians is: %s", display);
+        return display;
+    }
+    public double inverseTangent() {
+        display = Math.atan(display);
+        Console.println("The current display in radians is: %s", display);
+        return display;
+    }
+    public double switchUnitsMode(String mode) {
+        if ("radians".equals(mode)) {
+            display = Math.toRadians(display);
+            Console.println("The current display is: %s", display);
+
+        }
+        else if ("degrees".equals(mode)) {
+            display = Math.toDegrees(display);
+            Console.println("The current display is: %s", display);
+
+        }
+        return display;
+    }
+
+    public double switchUnitsModeByRotating() {
+        display = Math.toDegrees(display);
+        Console.println("The current display in degrees is: %s", display);
+        String userInput = Console.getStringInput("Would you like to switch to the next unit? Y or N");
+        if ("y".equals(userInput)) {
+            display = Math.toRadians(display);
+            Console.println("The current display in radians is: %s", display);
+        }
+        return display;
+    }
+    public double naturalLog(){
+        display = Math.log(display);
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double inverseNaturalLog(){
+        display = Math.exp(display);
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double log(){
+        display = Math.log10(display);
+        Console.println("The current display is: %s", display);
+        return display;
+    }
+    public double inverseLog(){
+        display = Math.pow(10,display);
         Console.println("The current display is: %s", display);
         return display;
     }
